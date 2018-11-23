@@ -4,6 +4,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using TestMasGlobal.Core.Bussiness;
+using TestMasGlobal.Core.Bussiness.Interfaces;
+using TestMasGlobal.Core.Data;
+using TestMasGlobal.Core.Data.Interfaces;
 
 namespace TestMasGlobal
 {
@@ -20,7 +24,10 @@ namespace TestMasGlobal
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
+            
+            services.AddScoped<IEmployeeData, EmployeeData>();
+            services.AddScoped<IEmployeeBussiness, EmployeeBussiness>();
+            
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {

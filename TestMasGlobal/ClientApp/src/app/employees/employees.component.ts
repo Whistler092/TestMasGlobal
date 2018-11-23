@@ -15,7 +15,7 @@ export class EmployeesComponent implements OnInit {
   profileForm = this.fb.group({
     search: ['']
   });
-  public listEmployees: Employees[];
+  public listEmployees;
 
 
   constructor(private fb: FormBuilder, private employeeService: EmployeeService,) {
@@ -26,11 +26,22 @@ export class EmployeesComponent implements OnInit {
   }
 
   onSubmit() {
+    
     console.log("Hola!", this.profileForm.value);
     this.employeeService.findEmployees(this.profileForm.value.search)
       .subscribe(data => {
-        this.listEmployees = data;
-      }, error => console.error(error))    
+        this.listEmployees = [];
+        
+        console.log("data",data);
+        if(data.length > 0){
+          this.listEmployees = data;
+        }
+        else {
+          this.listEmployees.push(data);
+        }
+      }, error => {
+        console.error(error);
+      })    
   }
 }
 
