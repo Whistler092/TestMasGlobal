@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
-import Employees from '../interface/i-employee';
 import { EmployeeService } from '../services/employee.service';
 
 @Component({

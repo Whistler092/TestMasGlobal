@@ -6,6 +6,6 @@ namespace TestMasGlobal.Core.Data.Interfaces
 {
     public interface IEmployeeData
     {
-         Task<List<Employee>> GetAllEmployees();
+         Task<List<EmployeeDTO>> GetAllEmployees();
     }
 }

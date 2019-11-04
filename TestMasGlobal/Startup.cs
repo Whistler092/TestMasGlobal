@@ -28,6 +28,8 @@ namespace TestMasGlobal
             services.AddScoped<IEmployeeData, EmployeeData>();
             services.AddScoped<IEmployeeBussiness, EmployeeBussiness>();
             
+            services.AddDbContext<EmployeesContext>();
+
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {

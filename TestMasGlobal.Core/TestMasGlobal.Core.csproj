@@ -3,9 +3,10 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TestMasGlobal.Entities\TestMasGlobal.Entities.csproj"/>
+    <ProjectReference Include="..\TestMasGlobal.Entities\TestMasGlobal.Entities.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2"/>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="2.1.4" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
 </Project>

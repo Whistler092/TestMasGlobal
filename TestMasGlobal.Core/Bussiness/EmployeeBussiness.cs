@@ -15,12 +15,12 @@ namespace TestMasGlobal.Core.Bussiness
         {
             _data = data;
         }
-        public async Task<List<EmployeeDTO>> GetAllEmployees()
+        public async Task<List<EmployeeDTO>> GetAllEmployees()  
         {
-            var employees = await _data.GetAllEmployees();
-            var listEmployees = new List<EmployeeDTO>();
+            return await _data.GetAllEmployees();
+            //var listEmployees = new List<EmployeeDTO>();
             
-            foreach (var employee in employees)
+            /* foreach (var employee in employees)
             {
                 var enumContract = (ContractType)Enum.Parse(typeof(ContractType), employee.ContractTypeName);
 
@@ -31,9 +31,9 @@ namespace TestMasGlobal.Core.Bussiness
                     Role = new Role(employee.RoleId, employee.RoleName, employee.RoleDescription),
                     Salary = enumContract == ContractType.HourlySalaryEmployee ? (120 * employee.HourlySalary * 12) : employee.MonthlySalary * 12,
                 });
-            }
+            } */
 
-            return listEmployees;
+            //return listEmployees;
         }
     }
 }
